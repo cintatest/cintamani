@@ -1,4 +1,4 @@
-Building Flowercoin
+Building Cintamani
 
 Use the autogen script to prepare the build environment.
 
@@ -7,10 +7,10 @@ Use the autogen script to prepare the build environment.
     make
 
 Precompiled binaries are available at github, see
-https://github.com/flowercoinproject/flowercoin-binaries
+https://github.com/cintamaniproject/cintamani-binaries
 
 Always verify the signatures and checksums.
 
-See doc/build-*.md for instructions on building flowercoind,
+See doc/build-*.md for instructions on building cintamanid,
 the intended-for-services, no-graphical-interface, reference
-implementation of Flowercoin.
+implementation of Cintamani.

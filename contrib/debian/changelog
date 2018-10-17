@@ -132,7 +132,7 @@ bitcoin (0.5.3-natty0) natty; urgency=low
 
   * New upstream release.
 
- -- Luke Flowercoinjr <luke+bitcoin+deb@flowercoinjr.org>  Tue, 10 Jan 2012 15:57:00 -0500
+ -- Luke Cintamanijr <luke+bitcoin+deb@cintamanijr.org>  Tue, 10 Jan 2012 15:57:00 -0500
 
 bitcoin (0.5.2-natty1) natty; urgency=low
 
@@ -147,7 +147,7 @@ bitcoin (0.5.2-natty0) natty; urgency=low
 
   * New upstream release.
 
- -- Luke Flowercoinjr <luke+bitcoin+deb@flowercoinjr.org>  Fri, 16 Dec 2011 17:57:00 -0500
+ -- Luke Cintamanijr <luke+bitcoin+deb@cintamanijr.org>  Fri, 16 Dec 2011 17:57:00 -0500
 
 bitcoin (0.5.1-natty0) natty; urgency=low
 
@@ -365,8 +365,8 @@ bitcoin (0.3.19~dfsg-5) unstable; urgency=low
 bitcoin (0.3.19~dfsg-4) unstable; urgency=low
 
   [ Micah Anderson ]
-  * Provide example flowercoin.conf.
-  * Add bitcoind(1) and flowercoin.conf(5) man pages.
+  * Provide example cintamani.conf.
+  * Add bitcoind(1) and cintamani.conf(5) man pages.
 
   [ Jonas Smedegaard ]
   * Ease backporting:

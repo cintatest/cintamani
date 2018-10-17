@@ -5,7 +5,7 @@
 #include "chain.h"
 #include "random.h"
 #include "versionbits.h"
-#include "test/test_flowercoin.h"
+#include "test/test_cintamani.h"
 #include "chainparams.h"
 #include "main.h"
 #include "consensus/params.h"

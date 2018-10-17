@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Flowercoin developers
+// Copyright (c) 2014-2015 The Cintamani developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -229,10 +229,10 @@ Value stop(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Flowercoin server.");
+            "\nStop Cintamani server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "Flowercoin server stopping";
+    return "Cintamani server stopping";
 }
 
 
@@ -308,17 +308,17 @@ static const CRPCCommand vRPCCommands[] =
     { "hidden",             "reconsiderblock",        &reconsiderblock,        true,      true,       false },
     { "hidden",             "setmocktime",            &setmocktime,            true,      false,      false },
 
-    /* Flowercoin features */
-    { "flowercoin",               "masternode",             &masternode,             true,      true,       false },
-    { "flowercoin",               "masternodelist",         &masternodelist,         true,      true,       false },
-    { "flowercoin",               "masternodebroadcast",    &masternodebroadcast,    true,      true,       false },
-    { "flowercoin",               "mnbudget",               &mnbudget,               true,      true,       false },
-    { "flowercoin",               "mnbudgetvoteraw",        &mnbudgetvoteraw,        true,      true,       false },
-    { "flowercoin",               "mnfinalbudget",          &mnfinalbudget,          true,      true,       false },
-    { "flowercoin",               "mnsync",                 &mnsync,                 true,      true,       false },
-    { "flowercoin",               "spork",                  &spork,                  true,      true,       false },
+    /* Cintamani features */
+    { "cintamani",               "masternode",             &masternode,             true,      true,       false },
+    { "cintamani",               "masternodelist",         &masternodelist,         true,      true,       false },
+    { "cintamani",               "masternodebroadcast",    &masternodebroadcast,    true,      true,       false },
+    { "cintamani",               "mnbudget",               &mnbudget,               true,      true,       false },
+    { "cintamani",               "mnbudgetvoteraw",        &mnbudgetvoteraw,        true,      true,       false },
+    { "cintamani",               "mnfinalbudget",          &mnfinalbudget,          true,      true,       false },
+    { "cintamani",               "mnsync",                 &mnsync,                 true,      true,       false },
+    { "cintamani",               "spork",                  &spork,                  true,      true,       false },
 #ifdef ENABLE_WALLET
-    { "flowercoin",               "darksend",               &darksend,               false,     false,      true  }, /* not threadSafe because of SendMoney */
+    { "cintamani",               "darksend",               &darksend,               false,     false,      true  }, /* not threadSafe because of SendMoney */
 
     /* Wallet */
     { "wallet",             "addmultisigaddress",     &addmultisigaddress,     true,      false,      true },
@@ -587,16 +587,16 @@ void StartRPCThreads()
         unsigned char rand_pwd[32];
         GetRandBytes(rand_pwd, 32);
         uiInterface.ThreadSafeMessageBox(strprintf(
-            _("To use flowercoind, or the -server option to flowercoin-qt, you must set an rpcpassword in the configuration file:\n"
+            _("To use cintamanid, or the -server option to cintamani-qt, you must set an rpcpassword in the configuration file:\n"
               "%s\n"
               "It is recommended you use the following random password:\n"
-              "rpcuser=flowercoinrpc\n"
+              "rpcuser=cintamanirpc\n"
               "rpcpassword=%s\n"
               "(you do not need to remember this password)\n"
               "The username and password MUST NOT be the same.\n"
               "If the file does not exist, create it with owner-readable-only file permissions.\n"
               "It is also recommended to set alertnotify so you are notified of problems;\n"
-              "for example: alertnotify=echo %%s | mail -s \"Flowercoin Alert\" admin@foo.com\n"),
+              "for example: alertnotify=echo %%s | mail -s \"Cintamani Alert\" admin@foo.com\n"),
                 GetConfigFile().string(),
                 EncodeBase58(&rand_pwd[0],&rand_pwd[0]+32)),
                 "", CClientUIInterface::MSG_ERROR | CClientUIInterface::SECURE);
@@ -1047,7 +1047,7 @@ json_spirit::Value CRPCTable::execute(const std::string &strMethod, const json_s
 }
 
 std::string HelpExampleCli(string methodname, string args){
-    return "> flowercoin-cli " + methodname + " " + args + "\n";
+    return "> cintamani-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args){

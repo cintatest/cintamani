@@ -10,7 +10,7 @@
 #include "txmempool.h"
 #include "random.h"
 #include "script/standard.h"
-#include "test/test_flowercoin.h"
+#include "test/test_cintamani.h"
 #include "utiltime.h"
 
 #include <boost/test/unit_test.hpp>

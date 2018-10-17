@@ -93,7 +93,7 @@ public:
 };
 
 /**
- * Flowercoin RPC command dispatcher.
+ * Cintamani RPC command dispatcher.
  */
 class CRPCTable
 {

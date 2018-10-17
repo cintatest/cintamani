@@ -434,7 +434,7 @@ Thanks to everyone who directly contributed to this release:
 - Chris Arnesen
 - Ciemon
 - CohibAA
-- Corinne Flowercoinjr
+- Corinne Cintamanijr
 - Cory Fields
 - Cozz Lovan
 - Daira Hopwood
@@ -463,7 +463,7 @@ Thanks to everyone who directly contributed to this release:
 - jtimon
 - Julian Yap
 - Luca Venturini
-- Luke Flowercoinjr
+- Luke Cintamanijr
 - Manuel Araoz
 - MarcoFalke
 - Matt Bogosian

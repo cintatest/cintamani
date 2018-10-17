@@ -1,11 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Flowercoin developers
+// Copyright (c) 2014-2015 The Cintamani developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/flowercoin-config.h"
+#include "config/cintamani-config.h"
 #endif
 
 #include "util.h"
@@ -103,7 +103,7 @@ namespace boost {
 
 using namespace std;
 
-//Flowercoin only features
+//Cintamani only features
 bool fMasterNode = false;
 string strMasterNodePrivKey = "";
 string strMasterNodeAddr = "";
@@ -232,8 +232,8 @@ bool LogAcceptCategory(const char* category)
             const vector<string>& categories = mapMultiArgs["-debug"];
             ptrCategory.reset(new set<string>(categories.begin(), categories.end()));
             // thread_specific_ptr automatically deletes the set when the thread ends.
-            // "flowercoin" is a composite category enabling all Flowercoin-related debug output
-            if(ptrCategory->count(string("flowercoin"))) {
+            // "cintamani" is a composite category enabling all Cintamani-related debug output
+            if(ptrCategory->count(string("cintamani"))) {
                 ptrCategory->insert(string("darksend"));
                 ptrCategory->insert(string("instantx"));
                 ptrCategory->insert(string("masternode"));
@@ -396,7 +396,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "flowercoin";
+    const char* pszModule = "cintamani";
 #endif
     if (pex)
         return strprintf(
@@ -417,13 +417,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Flowercoin
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Flowercoin
-    // Mac: ~/Library/Application Support/Flowercoin
-    // Unix: ~/.flowercoin
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Cintamani
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Cintamani
+    // Mac: ~/Library/Application Support/Cintamani
+    // Unix: ~/.cintamani
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Flowercoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "Cintamani";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -435,10 +435,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "Flowercoin";
+    return pathRet / "Cintamani";
 #else
     // Unix
-    return pathRet / ".flowercoin";
+    return pathRet / ".cintamani";
 #endif
 #endif
 }
@@ -485,7 +485,7 @@ void ClearDatadirCache()
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "flowercoin.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "cintamani.conf"));
     if (!pathConfigFile.is_complete())
         pathConfigFile = GetDataDir(false) / pathConfigFile;
 
@@ -504,7 +504,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 {
     boost::filesystem::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good()){
-        // Create empty flowercoin.conf if it does not excist
+        // Create empty cintamani.conf if it does not excist
         FILE* configFile = fopen(GetConfigFile().string().c_str(), "a");
         if (configFile != NULL)
             fclose(configFile);
@@ -516,7 +516,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
     for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it)
     {
-        // Don't overwrite existing settings so command line settings override flowercoin.conf
+        // Don't overwrite existing settings so command line settings override cintamani.conf
         string strKey = string("-") + it->string_key;
         if (mapSettingsRet.count(strKey) == 0)
         {
@@ -533,7 +533,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 #ifndef WIN32
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "flowercoind.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "cintamanid.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }

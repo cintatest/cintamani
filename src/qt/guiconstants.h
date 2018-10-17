@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Flowercoin developers
+// Copyright (c) 2014-2015 The Cintamani developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -45,9 +45,9 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 35
 
-#define QAPP_ORG_NAME "Flowercoin"
-#define QAPP_ORG_DOMAIN "dmrtsvetkov.io"
-#define QAPP_APP_NAME_DEFAULT "Flowercoin-Qt"
-#define QAPP_APP_NAME_TESTNET "Flowercoin-Qt-testnet"
+#define QAPP_ORG_NAME "Cintamani"
+#define QAPP_ORG_DOMAIN "cintatest.io"
+#define QAPP_APP_NAME_DEFAULT "Cintamani-Qt"
+#define QAPP_APP_NAME_TESTNET "Cintamani-Qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

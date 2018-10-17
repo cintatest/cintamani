@@ -6,12 +6,12 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/flowercoin
-src/flowercoind
-src/flowercoin-cli
-src/flowercoin-tx
-src/test/test_flowercoin
-src/qt/test/test_flowercoin-qt
+src/cintamani
+src/cintamanid
+src/cintamani-cli
+src/cintamani-tx
+src/test/test_cintamani
+src/qt/test/test_cintamani-qt
 
 # autoreconf
 Makefile.in
@@ -34,8 +34,8 @@ config.log
 config.status
 configure
 libtool
-src/config/flowercoin-config.h
-src/config/flowercoin-config.h.in
+src/config/cintamani-config.h
+src/config/cintamani-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -60,7 +60,7 @@ src/qt/test/moc*.cpp
 *.o
 *.o-*
 
-.flowercoin
+.cintamani
 *.a
 *.pb.cc
 *.pb.h
@@ -79,12 +79,12 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-flowercoin-qt
-Flowercoin-Qt.app
+cintamani-qt
+Cintamani-Qt.app
 
 # Unit-tests
 Makefile.test
-flowercoin-qt_test
+cintamani-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -100,7 +100,7 @@ build
 #lcov
 *.gcno
 /*.info
-test_flowercoin.coverage/
+test_cintamani.coverage/
 total.coverage/
 coverage_percent.txt
 

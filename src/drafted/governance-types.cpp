@@ -7,8 +7,8 @@ GovernanceObjectType GovernanceStringToType(std::string strType) {
     if(strType == "AllTypes") type = AllTypes;
     if(strType == "Error") type = Error;
     if(strType == "ValueOverride") type = ValueOverride;
-    if(strType == "FlowercoinNetwork") type = FlowercoinNetwork;
-    if(strType == "FlowercoinNetworkVariable") type = FlowercoinNetworkVariable;
+    if(strType == "CintamaniNetwork") type = CintamaniNetwork;
+    if(strType == "CintamaniNetworkVariable") type = CintamaniNetworkVariable;
     if(strType == "Category") type = Category;
     if(strType == "Group") type = Group;
     if(strType == "User") type = User;
@@ -28,8 +28,8 @@ std::string GovernanceTypeToString(GovernanceObjectType type) {
     if(type == AllTypes) s = "AllTypes";
     if(type == Error) s = "Error";
     if(type == ValueOverride) s = "ValueOverride";
-    if(type == FlowercoinNetwork) s = "FlowercoinNetwork";
-    if(type == FlowercoinNetworkVariable) s = "FlowercoinNetworkVariable";
+    if(type == CintamaniNetwork) s = "CintamaniNetwork";
+    if(type == CintamaniNetworkVariable) s = "CintamaniNetworkVariable";
     if(type == Category) s = "Category";
     if(type == Group) s = "Group";
     if(type == User) s = "User";

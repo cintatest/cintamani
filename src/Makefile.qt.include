@@ -1,24 +1,24 @@
-bin_PROGRAMS += qt/flowercoin-qt
+bin_PROGRAMS += qt/cintamani-qt
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
-# flowercoin qt core #
+# cintamani qt core #
 QT_TS = \
-  qt/locale/flowercoin_bg.ts \
-  qt/locale/flowercoin_de.ts \
-  qt/locale/flowercoin_en.ts \
-  qt/locale/flowercoin_es.ts \
-  qt/locale/flowercoin_fi.ts \
-  qt/locale/flowercoin_fr.ts \
-  qt/locale/flowercoin_it.ts \
-  qt/locale/flowercoin_ja.ts \
-  qt/locale/flowercoin_pl.ts \
-  qt/locale/flowercoin_pt.ts \
-  qt/locale/flowercoin_ru.ts \
-  qt/locale/flowercoin_sk.ts \
-  qt/locale/flowercoin_sv.ts \
-  qt/locale/flowercoin_vi.ts \
-  qt/locale/flowercoin_zh_CN.ts \
-  qt/locale/flowercoin_zh_TW.ts
+  qt/locale/cintamani_bg.ts \
+  qt/locale/cintamani_de.ts \
+  qt/locale/cintamani_en.ts \
+  qt/locale/cintamani_es.ts \
+  qt/locale/cintamani_fi.ts \
+  qt/locale/cintamani_fr.ts \
+  qt/locale/cintamani_it.ts \
+  qt/locale/cintamani_ja.ts \
+  qt/locale/cintamani_pl.ts \
+  qt/locale/cintamani_pt.ts \
+  qt/locale/cintamani_ru.ts \
+  qt/locale/cintamani_sk.ts \
+  qt/locale/cintamani_sv.ts \
+  qt/locale/cintamani_vi.ts \
+  qt/locale/cintamani_zh_CN.ts \
+  qt/locale/cintamani_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -90,16 +90,16 @@ BITCOIN_MM = \
   qt/macnotificationhandler.mm
 
 QT_MOC = \
-  qt/flowercoin.moc \
+  qt/cintamani.moc \
   qt/bitcoinamountfield.moc \
   qt/intro.moc \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_flowercoin.cpp
-QT_QRC = qt/flowercoin.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_flowercoin_locale.cpp
-QT_QRC_LOCALE = qt/flowercoin_locale.qrc
+QT_QRC_CPP = qt/qrc_cintamani.cpp
+QT_QRC = qt/cintamani.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_cintamani_locale.cpp
+QT_QRC_LOCALE = qt/cintamani_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
@@ -207,13 +207,13 @@ RES_ICONS = \
   qt/res/icons/tx_input.png \
   qt/res/icons/tx_output.png \
   qt/res/icons/tx_mined.png \
-  qt/res/icons/unit_flowercoin.png \
-  qt/res/icons/unit_mflowercoin.png \
-  qt/res/icons/unit_uflowercoin.png \
+  qt/res/icons/unit_cintamani.png \
+  qt/res/icons/unit_mcintamani.png \
+  qt/res/icons/unit_ucintamani.png \
   qt/res/icons/unit_duffs.png \
-  qt/res/icons/unit_tflowercoin.png \
-  qt/res/icons/unit_tmflowercoin.png \
-  qt/res/icons/unit_tuflowercoin.png \
+  qt/res/icons/unit_tcintamani.png \
+  qt/res/icons/unit_tmcintamani.png \
+  qt/res/icons/unit_tucintamani.png \
   qt/res/icons/unit_tduffs.png
 
 BITCOIN_QT_CPP = \
@@ -273,7 +273,7 @@ RES_IMAGES = \
   qt/res/images/about.png \
   qt/res/images/splash.png \
   qt/res/images/splash_testnet.png \
-  qt/res/images/flowercoin_logo_horizontal.png \
+  qt/res/images/cintamani_logo_horizontal.png \
   qt/res/images/drkblue_downArrow.png \
   qt/res/images/drkblue_downArrow_small.png \
   qt/res/images/drkblue_upArrow_small.png \
@@ -288,7 +288,7 @@ RES_CSS = \
 
 RES_MOVIES = $(wildcard qt/res/movies/spinner-*.png)
 
-BITCOIN_RC = qt/res/flowercoin-qt-res.rc
+BITCOIN_RC = qt/res/cintamani-qt-res.rc
 
 BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms
@@ -308,65 +308,65 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libbitcoinqt_a_OBJECTS) $(qt_flowercoin_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_cintamani_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
 $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
-# flowercoin-qt binary #
-qt_flowercoin_qt_CPPFLAGS = $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+# cintamani-qt binary #
+qt_cintamani_qt_CPPFLAGS = $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 
-qt_flowercoin_qt_SOURCES = qt/flowercoin.cpp
+qt_cintamani_qt_SOURCES = qt/cintamani.cpp
 if TARGET_DARWIN
-  qt_flowercoin_qt_SOURCES += $(BITCOIN_MM)
+  qt_cintamani_qt_SOURCES += $(BITCOIN_MM)
 endif
 if TARGET_WINDOWS
-  qt_flowercoin_qt_SOURCES += $(BITCOIN_RC)
+  qt_cintamani_qt_SOURCES += $(BITCOIN_RC)
 endif
-qt_flowercoin_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+qt_cintamani_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
-qt_flowercoin_qt_LDADD += $(LIBBITCOIN_WALLET)
+qt_cintamani_qt_LDADD += $(LIBBITCOIN_WALLET)
 endif
-qt_flowercoin_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBBITCOIN_UNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
+qt_cintamani_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBBITCOIN_UNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1)
-qt_flowercoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_flowercoin_qt_LIBTOOLFLAGS = --tag CXX
+qt_cintamani_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_cintamani_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
 
 .SECONDARY: $(QT_QM)
 
-qt/flowercoinstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES)
+qt/cintamanistrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) ../share/qt/extract_strings_qt.py $^
 
-translate: qt/flowercoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: qt/cintamanistrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts qt/locale/flowercoin_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts qt/locale/cintamani_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
 	@test -f $(@D)/$(<F) || cp -f $< $(@D)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name flowercoin_locale $(@D)/$(<F) | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name cintamani_locale $(@D)/$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
 	@test -f $(RCC)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name flowercoin $< | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name cintamani $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
 CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno
 
 CLEANFILES += $(CLEAN_QT)
 
-flowercoin_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_flowercoin_qt_OBJECTS) qt/flowercoin-qt$(EXEEXT) $(LIBBITCOINQT)
+cintamani_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_cintamani_qt_OBJECTS) qt/cintamani-qt$(EXEEXT) $(LIBBITCOINQT)
 
-flowercoin_qt : qt/flowercoin-qt$(EXEEXT)
+cintamani_qt : qt/cintamani-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

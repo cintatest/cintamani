@@ -1,8 +1,8 @@
-// Copyright (c) 2014-2017 The Flowercoin Core developers
+// Copyright (c) 2014-2017 The Cintamani Core developers
 
 #include "cachemap.h"
 
-#include "test/test_flowercoin.h"
+#include "test/test_cintamani.h"
 
 #include <boost/test/unit_test.hpp>
 

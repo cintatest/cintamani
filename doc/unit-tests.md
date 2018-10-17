@@ -6,13 +6,13 @@ and tests weren't explicitly disabled.
 
 After configuring, they can be run with 'make check'.
 
-To run the flowercoind tests manually, launch src/test/test_flowercoin .
+To run the cintamanid tests manually, launch src/test/test_cintamani .
 
-To add more flowercoind tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
+To add more cintamanid tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
 .cpp files in the test/ directory or add new .cpp files that
 implement new BOOST_AUTO_TEST_SUITE sections.
 
-To run the flowercoin-qt tests manually, launch src/qt/test/flowercoin-qt_test
+To run the cintamani-qt tests manually, launch src/qt/test/cintamani-qt_test
 
-To add more flowercoin-qt tests, add them to the `src/qt/test/` directory and
+To add more cintamani-qt tests, add them to the `src/qt/test/` directory and
 the `src/qt/test/test_main.cpp` file.

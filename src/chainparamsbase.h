@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between flowercoin-cli and flowercoind)
- * of a given instance of the Flowercoin system.
+ * CBaseChainParams defines the base parameters (shared between cintamani-cli and cintamanid)
+ * of a given instance of the Cintamani system.
  */
 class CBaseChainParams
 {

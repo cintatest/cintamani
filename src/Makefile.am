@@ -60,15 +60,15 @@ bin_PROGRAMS =
 TESTS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += flowercoind
+  bin_PROGRAMS += cintamanid
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += flowercoin-cli flowercoin-tx
+  bin_PROGRAMS += cintamani-cli cintamani-tx
 endif
 
 .PHONY: FORCE
-# flowercoin core #
+# cintamani core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   addrman.h \
@@ -170,7 +170,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between flowercoind and flowercoin-qt
+# server: shared between cintamanid and cintamani-qt
 libbitcoin_server_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS)
 libbitcoin_server_a_SOURCES = \
   addrman.cpp \
@@ -202,7 +202,7 @@ libbitcoin_server_a_SOURCES = \
   $(JSON_H) \
   $(BITCOIN_CORE_H)
 
-# wallet: shared between flowercoind and flowercoin-qt, but only linked
+# wallet: shared between cintamanid and cintamani-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_SOURCES = \
@@ -278,7 +278,7 @@ univalue_libbitcoin_univalue_a_SOURCES = \
   univalue/univalue_escapes.h \
   univalue/univalue.h
 
-# common: shared between flowercoind, and flowercoin-qt and non-server tools
+# common: shared between cintamanid, and cintamani-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_common_a_SOURCES = \
   allocators.cpp \
@@ -333,7 +333,7 @@ libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 libbitcoin_util_a_SOURCES += compat/glibcxx_compat.cpp
 endif
 
-# cli: shared between flowercoin-cli and flowercoin-qt
+# cli: shared between cintamani-cli and cintamani-qt
 libbitcoin_cli_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_SOURCES = \
   rpcclient.cpp \
@@ -343,7 +343,7 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-flowercoind_LDADD = \
+cintamanid_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UNIVALUE) \
@@ -354,35 +354,35 @@ flowercoind_LDADD = \
   $(LIBSECP256K1)
 
 if ENABLE_WALLET
-flowercoind_LDADD += libbitcoin_wallet.a
+cintamanid_LDADD += libbitcoin_wallet.a
 endif
-flowercoind_SOURCES = flowercoind.cpp
+cintamanid_SOURCES = cintamanid.cpp
 #
 
 if TARGET_WINDOWS
-flowercoind_SOURCES += flowercoind-res.rc
+cintamanid_SOURCES += cintamanid-res.rc
 endif
 
-flowercoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS)
-flowercoind_CPPFLAGS = $(BITCOIN_INCLUDES)
-flowercoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+cintamanid_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS)
+cintamanid_CPPFLAGS = $(BITCOIN_INCLUDES)
+cintamanid_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
-# flowercoin-cli binary #
-flowercoin_cli_LDADD = \
+# cintamani-cli binary #
+cintamani_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBBITCOIN_UTIL) \
   $(BOOST_LIBS) \
   $(SSL_LIBS) \
   $(CRYPTO_LIBS)
 
-flowercoin_cli_SOURCES = \
-  flowercoin-cli.cpp
+cintamani_cli_SOURCES = \
+  cintamani-cli.cpp
 
-flowercoin_cli_CPPFLAGS = $(BITCOIN_INCLUDES)
+cintamani_cli_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
 
-# flowercoin-tx binary #
-flowercoin_tx_LDADD = \
+# cintamani-tx binary #
+cintamani_tx_LDADD = \
   $(LIBBITCOIN_UNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -391,15 +391,15 @@ flowercoin_tx_LDADD = \
   $(BOOST_LIBS) \
   $(CRYPTO_LIBS)
 
-flowercoin_tx_SOURCES = flowercoin-tx.cpp
-flowercoin_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
+cintamani_tx_SOURCES = cintamani-tx.cpp
+cintamani_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
-flowercoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+cintamani_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-flowercoin_cli_SOURCES += flowercoin-cli-res.rc
+cintamani_cli_SOURCES += cintamani-cli-res.rc
 endif
-flowercoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+cintamani_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if BUILD_BITCOIN_LIBS
 include_HEADERS = script/bitcoinconsensus.h
