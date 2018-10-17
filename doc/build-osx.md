@@ -67,7 +67,7 @@ After exiting, you'll get a warning that the install is keg-only, which means it
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone https://github.com/dmrtsvetkov/flowercoin.git
+        git clone https://github.com/cintatest/flowercoin.git
         cd flowercoin
 
 2.  Build flowercoind:

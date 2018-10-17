@@ -20,7 +20,7 @@ packages:
 - "libbz2-dev"
 reference_datetime: "2016-01-01 00:00:00"
 remotes:
-- "url": "https://github.com/dmrtsvetkov/flowercoin.git"
+- "url": "https://github.com/cintatest/flowercoin.git"
   "dir": "flowercoin"
 files:
 - "MacOSX10.7.sdk.tar.gz"

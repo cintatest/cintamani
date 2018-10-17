@@ -281,7 +281,7 @@ Clone the git repositories for flowercoin and gitian and then checkout the flowe
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/dmrtsvetkov/flowercoin.git
+git clone https://github.com/cintatest/flowercoin.git
 cd flowercoin
 git checkout v${VERSION}
 cd ..
