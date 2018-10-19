@@ -4401,7 +4401,7 @@ rpcpassword=%s
     </message>
     <message>
         <source>This is experimental software.</source>
-        <translation>Это экспериментальное ПО.</translation>
+        <translation>Программное обеспечение.</translation>
     </message>
     <message>
         <source>This is intended for regression testing tools and app development.</source>
