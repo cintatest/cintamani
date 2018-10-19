@@ -35,8 +35,8 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
     // define text to place
     QString titleText       = tr("Cintamani Core");
     QString versionText     = QString(tr("Version %1")).arg(QString::fromStdString(FormatFullVersion()));
-    QString copyrightTextBtc   = QChar(0xA9)+QString(" 2017-%1 ").arg(COPYRIGHT_YEAR) + QString(tr("The Cintamani Core developers"));
-    //QString copyrightTextCintamani   = QChar(0xA9)+QString(" 2014-%1 ").arg(COPYRIGHT_YEAR) + QString(tr("The Cintamani Core developers"));
+    QString copyrightTextBtc   = QChar(0xA9)+QString(" 2016-%1 ").arg(COPYRIGHT_YEAR) + QString(tr("The Cintamani Core developers"));
+    QString copyrightTextCintamani   = QChar()+QString("").arg(COPYRIGHT_YEAR) + QString(tr(""));
     QString titleAddText    = networkStyle->getTitleAddText();
 
     QString font            = QApplication::font().toString();
