@@ -1,5 +1,5 @@
 # List of fixed seed nodes for testnet
-91.237.25.16
+
 18.216.156.51
 192.168.0.103
 127.0.0.1

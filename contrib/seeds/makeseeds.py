@@ -12,8 +12,8 @@ MIN_BLOCKS = 200000
 # These are hosts that have been observed to be behaving strangely (e.g.
 # aggressively connecting to every node).
 SUSPICIOUS_HOSTS = set([
-    "18.216.156.51", "192.168.0.103", "91.237.25.16",
-    "127.0.0.1" 
+    "18.216.156.51", "192.168.0.103",
+    "127.0.0.1"
 ])
 
 import re
